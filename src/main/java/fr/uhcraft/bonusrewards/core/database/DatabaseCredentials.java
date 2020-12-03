@@ -1,6 +1,6 @@
 package fr.uhcraft.bonusrewards.core.database;
 
-import org.bukkit.Bukkit;
+import fr.uhcraft.bonusrewards.BonusRewards;
 import org.bukkit.configuration.ConfigurationSection;
 
 class DatabaseCredentials {
@@ -11,7 +11,7 @@ class DatabaseCredentials {
     private final String user;
 
     DatabaseCredentials(String configName) {
-        final ConfigurationSection config = Bukkit.getServer().spigot().getConfig().getConfigurationSection(configName);
+        final ConfigurationSection config = BonusRewards.INSTANCE.getConfig().getConfigurationSection(configName);
         this.host = config.getString("host");
         this.user = config.getString("user");
         this.pass = config.getString("pass");
